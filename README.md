@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# E-Shopping
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What This Does
+
+A small e-commerce storefront demo. It lists men's and women's clothing from the
+public [Fake Store API](https://fakestoreapi.com/), lets you open a product detail
+page, and add/remove items in a slide-out shopping bag with live quantity and total.
+
+## Tech Stack
+
+- React 18 (Create React App)
+- React Router DOM for routing
+- React Context for cart, product, and sidebar state
+- TailwindCSS for styling
+- react-icons for icons
+
+## Prerequisites
+
+- Node.js 18+
+
+## Setup
+
+1. Clone the repo
+2. `npm install`
+3. `npm start` — opens http://localhost:3000
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command         | Description                          |
+| --------------- | ------------------------------------ |
+| `npm start`     | Run the dev server                   |
+| `npm run build` | Build the production bundle          |
+| `npm test`      | Run the test runner                  |
 
-### `npm start`
+## Pages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Route          | Description                          |
+| -------------- | ------------------------------------ |
+| `/`            | Home — hero and product grid         |
+| `/product/:id` | Single product detail page           |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+├── components/      # Header, Sidebar, Hero, Footer, Product, CartItem
+├── contexts/        # CartContext, ProductContext, SidebarContext
+├── pages/           # Home, ProductDetails
+├── img/             # Local image assets
+├── App.jsx          # Routes + layout
+└── index.js         # Entry point, wraps the app in context providers
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Notes
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Product data is fetched at runtime from the Fake Store API; no backend or
+  environment variables are required.
+- The Home page only shows the `men's clothing` and `women's clothing` categories.
